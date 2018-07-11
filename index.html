@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<title>Calc</title>
+		
+		<script type="text/x-mathjax-config">
+			MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+		</script>
+		
+		<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/latest.js?config=TeX-MML-AM_CHTML' async></script>
+		<script src='scripts/fraction.js'></script>
+		<script src='scripts/latex.js'></script>
+		<script src='scripts/graphs.js'></script>
+		<script src='scripts/parser.js'></script>
+		<script type="text/javascript">
+
+			const load = () => {
+
+				canvas = document.getElementById("canvas");
+		          
+		        const minX = -10;
+				const maxX = 10;
+
+				const minY = -2;
+				const maxY = 2;  
+
+				const XGridStep = 1;
+				const YGridStep = 0.1;
+				const gridStatus = true;
+
+				const func = (x) => (Math.tan(x));
+
+		        let graph = new Graph({
+		        	canvas: canvas,
+		        	minX: minX,
+					minY: minY,
+					maxX: maxX,
+					maxY: maxY,
+					XGridStep: XGridStep,
+					YGridStep: YGridStep,
+					gridStatus: gridStatus,
+					func: func 
+		        });   
+
+		        graph.drawGraph();       
+			
+			}
+
+			window.addEventListener("DOMContentLoaded", load);             
+
+		
+
+			
+		</script>
+	</head>
+	<body>
+		<canvas id="canvas" width="500" height="500">
+            Мой охренительно классный Canvas не работает... И все из-за тебя %browser% (IE)!
+        </canvas>
+	</body>
+</html>
